@@ -1,6 +1,6 @@
 # Predictive Analytics for Bank Loan Risk Assessment
 
-This repository contains the research and implementation of a machine learning pipeline designed to assess credit risk in highly imbalanced loan datasets. The project specifically addresses the **"Accuracy Paradox,"** where models achieve high nominal accuracy by failing to identify the small percentage of actual defaulters.
+[cite_start]This repository contains the research and implementation of a machine learning pipeline designed to assess credit risk in highly imbalanced loan datasets[cite: 14]. [cite_start]The project specifically addresses the **"Accuracy Paradox,"** where models achieve high nominal accuracy by failing to identify the small percentage of actual defaulters[cite: 16, 17].
 
 ---
 
