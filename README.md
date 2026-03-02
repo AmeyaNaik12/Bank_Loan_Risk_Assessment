@@ -5,7 +5,7 @@
 ---
 
 ## 📊 Project Overview
-[cite_start]Loan datasets are inherently skewed, with defaulters forming a very small portion of total borrowers[cite: 15, 31]. [cite_start]This project systematically evaluates strategies to move beyond simple accuracy, focusing on the trade-off between detecting financial risk (minority recall) and maintaining overall predictive performance[cite: 19, 20].
+[cite_start]Loan datasets are inherently skewed, with defaulters forming a very small portion of total borrowers[cite: 15, 31]. [cite_start]This project systematically evaluates strategies to move beyond simple accuracy, focusing on the trade-off between detecting financial risk (minority recall) and maintaining overall predictive performance[cite: 19].
 
 ### Core Objectives
 * [cite_start]**Mitigate Class Imbalance**: Evaluating cost-sensitive learning and resampling techniques[cite: 18, 50].
@@ -24,22 +24,22 @@
 * [cite_start]**Categorical Encoding**: Utilized oblivious (symmetric) decision trees in CatBoost to handle sparse categorical data and reduce overfitting[cite: 111, 113].
 * **Resampling Strategies**:
     * [cite_start]**SMOTE-Tomek**: A hybrid approach to generate minority instances while eliminating proximal majority-class noise[cite: 69, 70].
-    * [cite_start]**ADASYN**: Density-based oversampling that focuses on high-variance regions where classes overlap[cite: 75].
-    * [cite_start]**TabularGAN (TVAE)**: Generative synthesis of additional "defaulter" profiles in feature space to improve representation[cite: 79].
+    * [cite_start]**ADASYN**: Density-based oversampling that focuses on high-variance regions where classes overlap[cite: 74, 75].
+    * [cite_start]**TabularGAN (TVAE)**: Generative synthesis of additional "defaulter" profiles in feature space to improve representation[cite: 79, 182].
 
 ---
 
 ## 📈 Model Performance & Results
-[cite_start]The experimental trajectory moved from high-recall, risk-averse models to precision-optimized architectures[cite: 148].
+[cite_start]The experimental trajectory moved from high-recall, risk-averse models to precision-optimized architectures[cite: 96, 148].
 
 
 
 | Model | Accuracy | Strategy | Key Result |
 | :--- | :--- | :--- | :--- |
-| **LightGBM** | **17.22%** | Threshold Tuning ($P=0.04$) | [cite_start]High Minority Recall (0.93) [cite: 97, 106] |
-| **CatBoost** | **28.21%** | Cost-Sensitive ($W=20$) | [cite_start]0.76 Recall for Defaulters [cite: 109, 116] |
-| **XGBoost (Base)**| **46.97%** | ROC-AUC Optimized | [cite_start]Identified 671 actual defaults [cite: 120, 131] |
-| **XGBoost (Opt)** | **90.37%** | Precision-Optimized ($W=1$) | [cite_start]Mathematical peak of accuracy [cite: 134, 145] |
+| **LightGBM** | **17.22%** | Threshold Tuning ($P=0.04$) | [cite_start]High Minority Recall (0.93) [cite: 106, 108] |
+| **CatBoost** | **28.21%** | Cost-Sensitive ($W=20$) | [cite_start]0.76 Recall for Defaulters [cite: 114, 116] |
+| **XGBoost (Base)**| **46.97%** | ROC-AUC Optimized | [cite_start]Identified 671 actual defaults [cite: 124, 131] |
+| **XGBoost (Opt)** | **90.37%** | Precision-Optimized ($W=1$) | [cite_start]Peak mathematical accuracy [cite: 145, 150] |
 
 ---
 
@@ -52,7 +52,7 @@
 ## 🛠️ Project Structure & Usage
 
 ### Directory Layout
-* [cite_start]**/sampling**: Contains implementations for **SMOTE-Tomek**, **ADASYN**, and **TVAE**[cite: 18, 182].
+* [cite_start]**/sampling**: Contains implementations for **SMOTE-Tomek**, **ADASYN**, and **TVAE**[cite: 59, 79].
 * [cite_start]**/models**: Includes the iterative tuning scripts for the **LightGBM**, **CatBoost**, and **XGBoost** architectures[cite: 18, 93].
 
 ### Installation
